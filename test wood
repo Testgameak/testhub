@@ -5566,7 +5566,7 @@ function Library:Window(Args)
     local Title = Args.Title or "Xova's Project"
     local SubTitle = Args.SubTitle or "Made by s1nve"
     local WelcomeTitle = Args.WelcomeTitle or Title
-    local LogoId = Args.Logo or 15707987574
+    local LogoId = Args.Logo or 82518062987993
     local PlayerName = game:GetService("Players").LocalPlayer.Name
 
     local Xova = Library:Create("ScreenGui", {
@@ -8113,14 +8113,14 @@ local Visual = LibWindow:NewPage({
     Icon  = 6034287513,
 })
 Status:InfoNguyenNhat({
-    Developer = { Name = "Tôi không giỏi mọi thứ, tôi giỏi đúng thứ khiến người khác nể.", Role = "Nguyễn Minh Nhật", Avatar = 84788566655539 }
+    Developer = { Name = "Pro Skider", Role = "Thais", Avatar = 82518062987993 }
 })
 
 Status:Discord({
     ServerName = "Wood HUB",
     ServerDescription = "Join My Sever To Get New Update Wood Hub.",
-    ServerIcon = 15901195437,
-    InviteURL = "https://discord.gg/6mnF7haEjd"
+    ServerIcon = 82518062987993,
+    InviteURL = "https://discord.gg/WsGaHGWxcy"
 })
 
 Status:Section("Information Client")
@@ -19796,4 +19796,3 @@ task.spawn(function()
         )
     end
 end)
-
