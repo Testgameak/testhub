@@ -1,0 +1,39 @@
+# ============================================
+# Script đổi màu UI từ tông CAM sang tông GỖ
+# Cách dùng:
+#   python doi_mau_go.py input.lua output.lua
+# ============================================
+
+import sys
+
+def replace_colors(input_path, output_path):
+    with open(input_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    replacements = [
+        # Màu cam chính -> nâu gỗ trung
+        ('255, 140, 0',  '139, 90, 43'),
+        # Màu viền/stroke cam tối -> nâu gỗ tối
+        ('100, 55, 0',   '70, 40, 15'),
+        # Màu hồng THEME (WelcomeCard, OwnerCard) -> nâu gỗ
+        ('255, 0, 128',  '139, 90, 43'),
+    ]
+
+    count_total = 0
+    for old, new in replacements:
+        occurrences = content.count(old)
+        content = content.replace(old, new)
+        print(f"  '{old}' -> '{new}' : {occurrences} chỗ")
+        count_total += occurrences
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+    print(f"\nHoan tat! Tong cong thay {count_total} cho.")
+    print(f"File da luu: {output_path}")
+
+if __name__ == '__main__':
+    if len(sys.argv) < 3:
+        print("Cach dung: python doi_mau_go.py input.lua output.lua")
+        sys.exit(1)
+    replace_colors(sys.argv[1], sys.argv[2])
