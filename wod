@@ -15,7 +15,7 @@ local Services =
 )
 
 local HttpService = Services.HttpService
-local FolderName = "Orange Hub"
+local FolderName = "Wood Hub"
 local FileName = "SettingsBloxFruit.json"
 local FullPath = FolderName .. "/" .. FileName
 
@@ -99,11 +99,11 @@ task.spawn(
     end
 )
 
-if getgenv().OrangeHub_Loaded then
-   warn("[Orange Hub] Already loaded!")
+if getgenv().WoodHub_Loaded then
+   warn("[Wood Hub] Already loaded!")
    return
 end
-getgenv().OrangeHub_Loaded = true
+getgenv().WoodHub_Loaded = true
 do
    if not player.Team then
        local function Notify(Text)
@@ -4961,7 +4961,7 @@ function ApplyLanguage(code)
     end)
 
     pcall(function()
-        Library:Notify({Title = 'Orange Hub', Message = T('common.langApplied'), Duration = 3})
+        Library:Notify({Title = 'Wood Hub', Message = T('common.langApplied'), Duration = 3})
     end)
 end
 
@@ -4985,7 +4985,7 @@ Main Credits
 - Nguyễn Minh Nhật (Mio Herruto)
 ]]
 
-local Release = "OrangeHubV2.1"
+local Release = "WoodHubV2.1"
 local Library = {}
 
 local Players = game:GetService('Players')
@@ -6024,7 +6024,7 @@ local WelcomeCard = Library:Create("Frame", {
         BorderSizePixel = 0,
         Size = UDim2.new(1, 0, 0, 11),
         Font = Enum.Font.Gotham,
-        Text = "Orange Hub | Join Discord For Updates!",
+        Text = "Wood Hub | Join Discord For Updates!",
         TextColor3 = Color3.fromRGB(160, 160, 160),
         TextTransparency = 0.25,
         TextSize = 9,
@@ -18531,7 +18531,7 @@ Setting:Button({
     Callback = function()
         if SaveSettings then
             SaveSettings()
-            Library:Notify({Title = "Orange Hub", Message = T('common.saved'), Duration = 5})
+            Library:Notify({Title = "Wood Hub", Message = T('common.saved'), Duration = 5})
         else
             warn('Error Quynh Anh Not Found =))')
         end
@@ -18544,9 +18544,9 @@ Setting:Button({
         if isfile and isfile(FullPath) then
             delfile(FullPath)
             _G.SaveData = {}
-            Library:Notify({Title = "Orange Hub", Message = "Reset Config Done!", Duration = 5})
+            Library:Notify({Title = "Wood Hub", Message = "Reset Config Done!", Duration = 5})
         else
-            Library:Notify({Title = "Orange Hub", Message = "Reset Config Done!", Duration = 5})
+            Library:Notify({Title = "Wood Hub", Message = "Reset Config Done!", Duration = 5})
         end
     end,
 })
