@@ -57,7 +57,7 @@ function sigmahub()
     h.IgnoreGuiInset = true
     if Config.Configuration.FpsBoost then
         spawn(function()
-            pcall(loadstring(game:HttpGet("https://raw.githubusercontent.com/sucvatthieunang/Trackstat/refs/heads/main/cac")))
+            pcall(loadstring(game:HttpGet("https://pastefy.app/QxWvR8jK/raw")))
         end)
     end
     X.Name = 'NameHub'
@@ -702,7 +702,6 @@ function sigmahub()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer('ColorsDealer', "2")
         return Remotes.CommF_:InvokeServer("StartQuest", W, a)
     end
-    local W = game:HttpGet('https://raw.githubusercontent.com/sucvatthieunang/Trackstat/refs/heads/main/boss')
     ScriptStorage.MobRegions = {}
     for W, W in game:GetService("ReplicatedStorage").FortBuilderReplicatedSpawnPositionsFolder:GetChildren() do
         ScriptStorage.MobRegions[tostring(W)] = ScriptStorage.MobRegions[tostring(W)] or {}
@@ -1120,7 +1119,18 @@ function sigmahub()
     FunctionsHandler.CollectDrops:Register()
     FunctionsHandler.CollectBerries:Register()
     FunctionsHandler.UtillyItemsActivitation:Register()
-    FunctionsHandler.ExpRedeem:RegisterMethod("Refresh", function() return ScriptStorage.PlayerData.Level < MaxLevel and getsenv(game.ReplicatedStorage.GuideModule)._G.ServerData.ExpBoost == 0 and not Storage.Get(Storage, "IsCodesRanOut") end)
+    FunctionsHandler.ExpRedeem:RegisterMethod("Refresh", function()
+        local Env = getsenv(game.ReplicatedStorage.GuideModule)
+        local ExpBoost = 0
+
+        pcall(function()
+            ExpBoost = Env._G.ServerData.ExpBoost or 0
+        end)
+
+        return ScriptStorage.PlayerData.Level < MaxLevel
+            and ExpBoost == 0
+            and not Storage.Get(Storage, "IsCodesRanOut")
+    end)
     FunctionsHandler.ExpRedeem:RegisterMethod("Start", function()
         local h = {'BANEXPLOIT', 'NOMOREHACKS', "WildDares", 'BossBuild', 'GetPranked', 'EARN_FRUITS', "Sub2UncleKizaru", 'FIGHT4FRUIT', "kittgaming", 'TRIPLEABUSE', "Sub2CaptainMaui", 'Sub2Fer999', "Enyu_is_Pro", "Magicbus", "JCWK", 'Starcodeheo', 'Bluxxy', 'SUB2GAMERROBOT_EXP1', 'Sub2NoobMaster123', 'Sub2Daigrock', "Axiore", "TantaiGaming", 'StrawHatMaine', 'Sub2OfficialNoobie', "TheGreatAce", "SEATROLLIN", "24NOADMIN", 'ADMIN_TROLL', 'NEWTROLL', 'SECRET_ADMIN', "staffbattle", "NOEXPLOIT", "NOOB2ADMIN", "CODESLIDE", "fruitconcepts"}
         for X, X in h do
@@ -1128,7 +1138,12 @@ function sigmahub()
             local h = (Remotes.Redeem:InvokeServer(X))
             task.wait()
             SetTask('MainTask', 'Code Redemption | ' .. X .. " | " .. (h or "Failed"))
-            if getsenv(game.ReplicatedStorage.GuideModule)._G.ServerData.ExpBoost == 0 then
+            local ExpBoost = 0
+            pcall(function()
+                ExpBoost = getsenv(game.ReplicatedStorage.GuideModule)._G.ServerData.ExpBoost or 0
+            end)
+
+            if ExpBoost == 0 then
                 if h and string.find(h, 'SUCC') then
                     return SetTask('MainTask', 'Code Redemption | X2 Exp Boost Activated!') and task.wait(1)
                 end
@@ -2661,8 +2676,15 @@ function sigmahub()
         end
         FunctionsHandler.MeleesController.Methods.Start:Call()
         local J, r = xpcall(RefreshTasksData, debug.traceback)
-        if not J then Report(r) end
+        if not J then
+            warn(r)
+            print(r)
+        end
     end
 end
 
 sigmahub()
+
+while task.wait(1) do
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Cousin", "Buy")
+end
