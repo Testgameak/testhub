@@ -7386,7 +7386,7 @@ end
                 Asset.Image = "rbxassetid://121742282171603"
                 
                 delay(3, function()
-                    Asset.Image = "rbxassetid://78020815235467"
+                    Asset.Image = "rbxassetid://102176390662444"
                 end)
             end)
             
