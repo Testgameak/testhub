@@ -5566,7 +5566,7 @@ function Library:Window(Args)
     local Title = Args.Title or "Xova's Project"
     local SubTitle = Args.SubTitle or "Made by s1nve"
     local WelcomeTitle = Args.WelcomeTitle or Title
-    local LogoId = Args.Logo or 82518062987993
+    local LogoId = Args.Logo or 102176390662444
     local PlayerName = game:GetService("Players").LocalPlayer.Name
 
     local Xova = Library:Create("ScreenGui", {
@@ -6524,7 +6524,7 @@ function Page:InfoNguyenNhat(InfoArgs)
         
         -- Link mặc định nếu bạn gọi lẻ hàm không truyền dữ liệu link
         local DevSocials = InfoArgs.Developer and InfoArgs.Developer.Socials or {
-            Discord = "https://discord.gg/6mnF7haEjd",
+            Discord = "https://discord.gg/WsGaHGWxcy",
             Tiktok = "https://www.tiktok.com/@toitenhoaikhuong?_r=1&_t=ZS-96mBSJObeKb",
             Youtube = "https://youtube.com/@hirimitinyy?si=1qhruuCFdg5Rzx6i"
         }
@@ -6541,8 +6541,8 @@ function Page:Discord(InfoArgs)
 
     local serverName = InfoArgs.ServerName or "Discord Server"
     local serverDesc = InfoArgs.ServerDescription or "Tham gia cộng đồng của chúng tôi!"
-    local serverIcon = InfoArgs.ServerIcon or "rbxassetid://125411502674016"
-    local inviteURL = InfoArgs.InviteURL or "https://discord.gg/6mnF7haEjd"
+    local serverIcon = InfoArgs.ServerIcon or "rbxassetid://102176390662444"
+    local inviteURL = InfoArgs.InviteURL or "https://discord.gg/WsGaHGWxcy"
 
     if type(serverIcon) == "number" then
         serverIcon = "rbxassetid://" .. serverIcon
@@ -7361,7 +7361,7 @@ end
                 BorderSizePixel = 0,
                 Position = UDim2.new(0.5, 0, 0.5, 0),
                 Size = UDim2.new(0, 15, 0, 15),
-                Image = "rbxassetid://78020815235467"
+                Image = "rbxassetid://102176390662444"
             })
 
             local Copy = Library:Button(Enter_1)
@@ -8113,13 +8113,13 @@ local Visual = LibWindow:NewPage({
     Icon  = 6034287513,
 })
 Status:InfoNguyenNhat({
-    Developer = { Name = "Pro Skider", Role = "Thais", Avatar = 102176390662444 }
+    Developer = { Name = "Pro Skider", Role = "Thais", Avatar = 99557761798864 }
 })
 
 Status:Discord({
     ServerName = "Wood HUB",
     ServerDescription = "Join My Sever To Get New Update Wood Hub.",
-    ServerIcon = 82518062987993,
+    ServerIcon = 102176390662444,
     InviteURL = "https://discord.gg/WsGaHGWxcy"
 })
 
@@ -19790,9 +19790,9 @@ task.spawn(function()
         task.wait(300)
         KhThy:NotiSea(
             "<Color=Cyan>Please Join Discord<Color=/> | " ..
-            "<Color=Green>discord.gg/6mnF7haEjd<Color=/>\n" ..
+            "<Color=Green>discord.gg/WsGaHGWxcy<Color=/>\n" ..
             "<Color=Yellow>Vui lòng tham gia Discord<Color=/> | " ..
-            "<Color=Green>discord.gg/6mnF7haEjd<Color=/>"
+            "<Color=Green>discord.gg/WsGaHGWxcy<Color=/>"
         )
     end
 end)
