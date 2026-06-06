@@ -8113,7 +8113,7 @@ local Visual = LibWindow:NewPage({
     Icon  = 6034287513,
 })
 Status:InfoNguyenNhat({
-    Developer = { Name = "Pro Skider", Role = "Thais", Avatar = 100128074779127 }
+    Developer = { Name = "Pro Skider", Role = "Thais", Avatar = 80991600087039}
 })
 
 Status:Discord({
@@ -19796,4 +19796,3 @@ task.spawn(function()
         )
     end
 end)
-
